@@ -1,2 +1,2 @@
 # example
-To try my webpage
+This is my proper website
