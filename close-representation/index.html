@@ -47,6 +47,7 @@
       .grad_text {
         background: -webkit-linear-gradient(right, #0039f5, #dedbd8, #ff8000);
         -webkit-background-clip: text;
+        background-clip: text; /* Standard property for future compatibility */
         -webkit-text-fill-color: transparent;
       }
     </style>
@@ -94,7 +95,7 @@
             <div class="column has-text-centered">
               <h1 class="title is-1 publication-title">
                 <span class="grad_text">CloSE</span>: A Compact Shape- and
-                Orientation-Agnostic Cloth State Representatione
+                Orientation-Agnostic Cloth State Representation
               </h1>
               <h2 class="title is-3">(under-review) submitted to IROS 2025</h2>
               <div class="is-size-5 publication-authors">
@@ -176,14 +177,14 @@
                       <i class="fa-brands fa-x-twitter"></i>Thread
                     </a>
                   </span> -->
-                  <span class="link-block">
+                  <!-- <span class="link-block">
                     <a
                       href="#BibTeX"
                       class="external-link button is-normal is-rounded is-dark"
                     >
                       <i class="fa-sharp fa-solid fa-link"></i>BibTex
                     </a>
-                  </span>
+                  </span> -->
                 </div>
               </div>
             </div>
@@ -218,73 +219,216 @@
                 the strengths of this representation in two relevant applications:
                 semantic labeling and high- and low-level planning.
               </p>
-              <!-- <ul>
-                <li>
-                  We propose a new model that leverages foundational vision and
-                  language models to learn cloth folding manipulations and can
-                  take previous actions into account.
-                </li>
-                <li>
-                  We describe a pipeline to automatically generate language
-                  annotations aligned to manipulation actions for existing
-                  datasets of folding demonstrations.
-                </li>
-                <li>
-                  We demonstrate the superiority of our model on an existing
-                  benchmark of unimodal manipulation, the newly introduced
-                  bimanual dataset, and on a real-world setup.
-                </li>
-              </ul> -->
             </div>
           </div>
         </div>
-        <!--/ Abstract. -->
-
-        <!-- Paper video. -->
-        <!-- <div class="columns is-centered has-text-centered">
+      </div>
+    </section>
+    <!--/ Abstract. -->
+    
+    <!-- Paper video. -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-3">Video (with audio narration)</h2>
+            <h2 class="title is-3">Video</h2>
             <video controls preload>
-              <source src="media/bifold_icra25.mp4" , type="video/mp4" />
+              <source src="./media/CloSE_IROS25.mp4" , type="video/mp4" />
             </video>
           </div>
-        </div> -->
-        <!--/ Paper video. -->
+        </div>
+      </div>
+    </section>
+    <!--/ Paper video. -->
+
+    <!-- Contributions -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <h4>Contributions:</h4>
+              <ul>
+                <li>
+                  We propose a new dGLI representation arranged in a disk instead of a matrix, the dGLI Disk.
+                  This representation unravels a hidden structure, and helps us detect folds on clothes of
+                  any shape.
+                </li>
+                <li>
+                  From the dGLI disk, we abstract out a very compact representation, CloSE, that generalizes to 
+                  any shape and pose of the cloth.
+                </li>
+                <li>
+                  We demonstrate the capabalities of our CloSE representation on two applications:
+                  <ol>
+                    <li>defining an automatic semantic description of the cloth state</li>
+                    <li>planning manipulation sequences</li>
+                  </ol>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- / Contributions -->
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Evaluations</h2>
+        <!-- Actual vs Predicted -->
+        <h3 class="title is-5">Ground Truth vs CloSE reconstruction</h3>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified">
+              <p>
+                Below we present a few examples of the ground truth cloth border along with
+                the predicted border from the CloSE representation.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="unimanual-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img
+            src="./media/gt_pred/50half_disk_01.jpg"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/50half_napkin_01.jpg"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/75diagonalHalf_napkin_01.jpg"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/75half_disk_01.jpg"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/75half_napkin_01.jpg"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/75half_tshirt_01.jpg"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/half_tshirt_01.jpg"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/diagonalHalf_napkin_01.jpg"
+            class="image"
+            />
+          </div>
+          <div class="item">
+            <img
+            src="./media/gt_pred/diagonalHalf_napkin_02.jpg"
+            class="image"
+            />
+          </div>
+        </div>
+        <!-- / Actual vs Predicted -->
       </div>
     </section>
 
-    <section class="section" id="BibTeX">
+    <!-- CloSE is continuous -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h3 class="title is-5">CloSE Representation in continuous</h3>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified">
+              <p>
+                We continuously move the fold location on the CloSE representation to observe
+                that the reconstructed cloth congiguration from the defined representation is also continuous.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-cloth_1">
+              <video poster="" id="cloth_1" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/continuity/Cloth_1.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-Tshirt_2">
+              <video poster="" id="Tshirt_2" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/continuity/Tshirt_2.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-cloth_2">
+              <video poster="" id="cloth_2" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/continuity/Cloth_2.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-Tshirt_3">
+              <video poster="" id="Tshirt_3" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/continuity/Tshirt_3.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-cloth_3">
+              <video poster="" id="cloth_3" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/continuity/Cloth_3.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-Tshirt_1">
+              <video poster="" id="Tshirt_1" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/continuity/Tshirt_1.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Semantic Labelling -->
+
+    <!-- Planning -->
+
+    <!-- <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
         <pre><code>
-          <!-- Copy paste the bibtex here -->
+          Copy paste the bibtex here 
         </code></pre>
       </div>
-    </section>
+    </section> -->
 
     <footer class="footer">
-      <!-- <div class="container"> -->
-      <!--   <div class="content has-text-centered"> -->
-      <!--     <a class="icon-link" -->
-      <!--        href="./static/videos/nerfies_paper.pdf"> -->
-      <!--       <i class="fas fa-file-pdf"></i> -->
-      <!--     </a> -->
-      <!--     <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled> -->
-      <!--       <i class="fab fa-github"></i> -->
-      <!--     </a> -->
-      <!--   </div> -->
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
             <p>
-              This website is licensed under a
-              <a
-                rel="license"
-                href="http://creativecommons.org/licenses/by-sa/4.0/"
-                >Creative Commons Attribution-ShareAlike 4.0 International
-                License</a
-              >
-              and borrowed from
+              The research has been partially supported by project PID2023-152259OB-I00 (CHLOE-MAP), 
+              MCIU/ AEI /10.13039/501100011033, project ROBassist (CSIC code 202450E060), 
+              and by ERDF, UE and project SoftEnable (HORIZON-CL4-2021-DIGITAL-EMERGING-01-101070600)
+            </p>
+            <p>
+              This website is borrowed from
               <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a
               >.
             </p>
@@ -292,32 +436,5 @@
         </div>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
-    <script>
-      bulmaCarousel.attach("#unimanual-carousel", {
-        slidesToScroll: 1,
-        slidesToShow: 4,
-        autoplay: true,
-        autoplaySpeed: 1500,
-      });
-      bulmaCarousel.attach("#bimanual-dataset-carousel", {
-        slidesToScroll: 1,
-        slidesToShow: 4,
-        autoplay: true,
-        autoplaySpeed: 1500,
-      });
-      bulmaCarousel.attach("#bimanual-softgym-carousel", {
-        slidesToScroll: 1,
-        slidesToShow: 4,
-        autoplay: true,
-        autoplaySpeed: 1500,
-      });
-      bulmaCarousel.attach("#bimanual-real-carousel", {
-        slidesToScroll: 1,
-        slidesToShow: 4,
-        autoplay: true,
-        autoplaySpeed: 2000,
-      });
-    </script>
   </body>
 </html>
