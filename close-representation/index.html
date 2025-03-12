@@ -194,7 +194,7 @@
     </section>
 
     <section class="section">
-      <div class="container is-max-desktop">
+      <div class="container">
         <!-- Abstract. -->
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
@@ -228,7 +228,7 @@
     
     <!-- Paper video. -->
     <section class="section">
-      <div class="container is-max-desktop">
+      <div class="container">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <h2 class="title is-3">Video</h2>
@@ -243,7 +243,7 @@
 
     <!-- Contributions -->
     <section class="section">
-      <div class="container is-max-desktop">
+      <div class="container">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <div class="content has-text-justified">
@@ -273,8 +273,66 @@
     </section>
     <!-- / Contributions -->
 
+    <!-- Visualizations -->
     <section class="section">
-      <div class="container is-max-desktop">
+      <div class="container">
+        <h2 class="title is-3">The dGLI_disk</h2>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified">
+              <p>
+                We present a few examples of the evolution of th dGLI disk 
+                with the state of the cloth. We visualize the mesh alongside
+                the dGLI disk and the dGLI difference.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div id="dGLI_disk-carousel" class="carousel results-carousel">
+            <div class="item item-dGLI_disk_1">
+              <video poster="" id="dGLI_disk_1" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/Visualizations/bottomTopHalf_Tshirt_02.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-dGLI_disk_2">
+              <video poster="" id="dGLI_disk_2" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/Visualizations/diagonalHalf_napkin_01.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-dGLI_disk_3">
+              <video poster="" id="dGLI_disk_3" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/Visualizations/75half_disk_01.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-dGLI_disk_4">
+              <video poster="" id="dGLI_disk_4" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/Visualizations/half_tshirt_01.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-dGLI_disk_4">
+              <video poster="" id="dGLI_disk_4" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/Visualizations/50diagonalHalf_napkin_01.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-dGLI_disk_4">
+              <video poster="" id="dGLI_disk_4" autoplay controls muted loop playsinline height="100%">
+                <source src="./media/Visualizations/75half_tshirt_01.mp4"
+                type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
         <h2 class="title is-3">Evaluations</h2>
         <!-- Actual vs Predicted -->
         <h3 class="title is-5">Ground Truth vs CloSE reconstruction</h3>
@@ -288,7 +346,7 @@
             </div>
           </div>
         </div>
-        <div id="unimanual-carousel" class="carousel results-carousel">
+        <div id="comparison-carousel" class="carousel results-carousel">
           <div class="item">
             <img
             src="./media/gt_pred/50half_disk_01.jpg"
@@ -350,7 +408,7 @@
 
     <!-- CloSE is continuous -->
     <section class="section">
-      <div class="container is-max-desktop">
+      <div class="container">
         <h3 class="title is-5">CloSE Representation in continuous</h3>
         <div class="columns is-centered">
           <div class="column is-full-width">
@@ -363,7 +421,7 @@
           </div>
         </div>
         <div class="container">
-          <div id="results-carousel" class="carousel results-carousel">
+          <div id="continuity-carousel" class="carousel results-carousel">
             <div class="item item-cloth_1">
               <video poster="" id="cloth_1" autoplay controls muted loop playsinline height="100%">
                 <source src="./media/continuity/Cloth_1.mp4"
@@ -406,8 +464,31 @@
     </section>
 
     <!-- Semantic Labelling -->
+    <!-- Need to ask for these examples from Júlia -->
 
     <!-- Planning -->
+    <!-- Put mini videos from the main video -->
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title is-3">Applications</h2>
+        <h3 class="title is-5">Planning with CloSE representation</h3>
+        <div id="planning-carousel" class="carousel results-carousel">
+          <div class="item item-Tshirt_1">
+            <video poster="" id="Tshirt_1" autoplay controls muted loop playsinline height="100%">
+              <source src="./media/Planning/Planning_Case_1.mp4"
+              type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-cloth_1">
+            <video poster="" id="cloth_1" autoplay controls muted loop playsinline height="100%">
+              <source src="./media/Planning/Planning_Case_2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
@@ -436,5 +517,32 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+    <script>
+      bulmaCarousel.attach("#dGLI_disk-carousel", {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 1000,
+      });
+      bulmaCarousel.attach("#comparison-carousel", {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 1000,
+      });
+      bulmaCarousel.attach("#continuity-carousel", {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 1000,
+      });
+      bulmaCarousel.attach("#planning-carousel", {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+      });
+    </script>
   </body>
 </html>
