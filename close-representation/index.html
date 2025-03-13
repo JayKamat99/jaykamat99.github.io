@@ -462,16 +462,115 @@
         </div>
       </div>
     </section>
-
+    
     <!-- Semantic Labelling -->
-    <!-- Need to ask for these examples from Júlia -->
-
-    <!-- Planning -->
-    <!-- Put mini videos from the main video -->
-
     <section class="section">
       <div class="container">
         <h2 class="title is-3">Applications</h2>
+        <h3 class="title is-5">Semantic Labelling</h3>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified">
+              <p>
+                By just using the CloSE representation we can naturally give semantic labels to 
+                the state of the cloth. Hover over the image to see the Semantic Label.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="semantic-labelling-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img
+              src="./media/SemanticLabelling/bottomTopHalf_Tshirt_03_semantic.png"
+              class="image"
+            />
+            <div class="overlay">
+              Cloth has 8 corners<br>
+              Corners {1,8} are folded<br>
+              Side 12 is 59.7% folded<br>
+              Side 78 is 59.5% folded
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="./media/SemanticLabelling/diagonalHalf_napkin_02_semantic.png"
+              class="image"
+            />
+            <div class="overlay">
+              Cloth has 4 corners<br>
+              Corners {4} are folded<br>
+              Diagonally folded in half<br>
+              Corner is 97% folded
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="./media/SemanticLabelling/half_disk_01_semantic.png"
+              class="image"
+            />
+            <div class="overlay">
+              Cloth is circular<br>
+              Cloth is folded in half<br>
+              Cloth is 52.8% folded
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="./media/SemanticLabelling/half_pants_01_semantic.png"
+              class="image"
+            />
+            <div class="overlay">
+              Cloth has 8 corners<br>
+              Corners {1,6,7,8} are folded<br>
+              Cloth is folded in half<br>
+              Side 12 is 52.1% folded<br>
+              Side 56 is 53% folded
+            </div>
+          </div>
+          <div class="item">
+            <img
+            src="./media/SemanticLabelling/half_tshirt_01_semantic.png"
+            class="image"
+            />
+            <div class="overlay">
+              Cloth has 8 corners<br>
+              Corners {1,6,7,8} are folded<br>
+              Cloth is folded in half<br>
+              Side 45 is 49.9% folded<br>
+              Side 81 is 47.2% folded
+            </div>
+          </div>
+          <div class="item">
+            <img
+            src="./media/SemanticLabelling/notHalf_napkin_01_semantic.png"
+            class="image"
+            />
+            <div class="overlay">
+              Cloth has 4 corners<br>
+              Corners {2,3} are folded<br>
+              Cloth is folded in half-askew<br>
+              Side 12 is 39.4% folded<br>
+              Side 34 is 61.8% folded
+            </div>
+          </div>
+          <div class="item">
+            <img
+            src="./media/SemanticLabelling/50diagonalHalf_napkin_01_semantic.png"
+            class="image"
+            />
+            <div class="overlay">
+              Cloth has 4 corners<br>
+              Corners {4} are folded<br>
+              Corner is 41.9% folded
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planning -->
+    <section class="section">
+      <div class="container">
         <h3 class="title is-5">Planning with CloSE representation</h3>
         <div id="planning-carousel" class="carousel results-carousel">
           <div class="item item-Tshirt_1">
@@ -523,25 +622,36 @@
         slidesToScroll: 1,
         slidesToShow: 3,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 10000,
+        infinite: true,
       });
       bulmaCarousel.attach("#comparison-carousel", {
         slidesToScroll: 1,
         slidesToShow: 3,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 10000,
+        infinite: true,
       });
       bulmaCarousel.attach("#continuity-carousel", {
         slidesToScroll: 1,
         slidesToShow: 3,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 10000,
+        infinite: true,
+      });
+      bulmaCarousel.attach("#semantic-labelling-carousel", {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        infinite: true,
       });
       bulmaCarousel.attach("#planning-carousel", {
         slidesToScroll: 1,
         slidesToShow: 1,
         autoplay: true,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 20000,
+        infinite: true,
       });
     </script>
   </body>
