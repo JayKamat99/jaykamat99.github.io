@@ -126,7 +126,7 @@
                   <!-- PDF Link. -->
                   <span class="link-block">
                     <a
-                      href="./media/Paper/CloSE_representataion_IROS25.pdf"
+                      href="./media/Paper/CloSE_representataion.pdf"
                       class="external-link button is-normal is-rounded is-dark"
                     >
                       <span class="icon">
@@ -282,8 +282,11 @@
             <div class="content has-text-justified">
               <p>
                 We present a few examples of the evolution of th dGLI disk 
-                with the state of the cloth. We visualize the mesh alongside
-                the dGLI disk and the dGLI difference.
+                with the state of the cloth. We visualize the cloth border alongside
+                the dGLI disk and the dGLI disk difference. The dGLI disk is the
+                proposed rearrangement of the dGLI Matrix. Notice a curve
+                appearing on the dGLI disk when the cloth is folded. This curve
+                is visible in isolation on the dGLI disk difference.
               </p>
             </div>
           </div>
@@ -341,7 +344,11 @@
             <div class="content has-text-justified">
               <p>
                 Below we present a few examples of the ground truth cloth border along with
-                the predicted border from the CloSE representation.
+                the predicted border from the CloSE representation. We estimate the CloSE 
+                representation from the given state of the cloth and fold the start state 
+                along the predictaed fold line. That is, reflect the border points on the 
+                folded side along the fold line. The folded border points and the fold line
+                is predicted by the CloSE representation. 
               </p>
             </div>
           </div>
@@ -572,6 +579,33 @@
     <section class="section">
       <div class="container">
         <h3 class="title is-5">Planning with CloSE representation</h3>
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="content has-text-justified">
+              <p>
+                High-level planning: Since the CloSE representation tracks the folds,
+                it can reason over its current state and plan the high-level
+                intermediate states. That is, just 2 cases in case of a single fold.
+                <ul>
+                  <li>Case 1: Start and the Goal are in the same semantic region</li>
+                  <li>Case 2: Start and the Goal are in different semantic regions</li>
+                </ul>
+                In case 1, we directly move to the goal configuration, and in case 2,
+                we first unfold the cloth and then fold along the desired fold line.
+              </p>
+              <p>
+                Low-level planning (planning the pick and place locations): Here we 
+                predict which corners to grab ad where to place them. 
+                We pick at max 2 corners from the folded side such that the area of the trepazoid 
+                formed by the fold points with the chosen corners is maximum. 
+                The locations for placing the grabbed points can be calculated
+                by reflecting the folded points along the fold line. We perform this operation 
+                twice, once for each fold, in the case of same semantic region fold to get the 
+                final place location.
+              </p>
+            </div>
+          </div>
+        </div>
         <div id="planning-carousel" class="carousel results-carousel">
           <div class="item item-Tshirt_1">
             <video poster="" id="Tshirt_1" autoplay controls muted loop playsinline height="100%">
